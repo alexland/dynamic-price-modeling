@@ -2,17 +2,19 @@
 # encoding: utf-8
 
 from sys import argv
-from random import gauss
+from functools import partial
 import numpy as NP
 from matplotlib import pyplot as MPL
 
 
-item_cost, item_sale_price = 1., 5.
+# item_cost, item_sale_price
+ic, isp = 1., 5.
+
 mu, sigma = 100, 10
 
 # 100 trials for each possible inventory level
 # 1 trial = 1 day
-max_trials = 100
+max_trials = 500
 
 
 # calculation of a range of inventory levels, varying mean demand
@@ -29,9 +31,11 @@ for inventory_level in xrange(mu - 5*sigma, mu + 5*sigma):
 
 # print("{0}\t{1}\t{2}".format(c1, n, avg/max_trials))
 
-def revenue(mu, s, mt, ic, isp):
+
+def revenue(isp, mu, s, mt, ic):
 	"""
-	returns mean revenue;
+	returns mean revenue, a 1D vector w/ len equal to
+	value of 'mt';
 	pass in inventory level, mu & sigma, max_trials for demand
 	distribution, and item's cost and sale price
 	"""
@@ -42,6 +46,12 @@ def revenue(mu, s, mt, ic, isp):
 	b = ic * il
 	revenue = a - b
 	return revenue/mt
+
+# each call to revenue generates one revenue versus inventory curve;
+# generate multiple (rev vs inv) curves by varying the item sale price, isp:
+isp = NP.arange(1.5, 6, .5)
+
+revenue2 = partial(revenue, mu=100, s=10, mt=10, ic=1.)
 
 
 #------------- plotting -----------------#
