@@ -1,0 +1,91 @@
+
+* {
+	margin:0;
+}
+
+h1 {
+	padding: 20px;
+	margin: -20px -20px 20px -20px;
+	border-bottom: 1px solid #558199;
+
+	background-color: #B5DCF1;
+	background-image: -moz-linear-gradient(top, #B5DCF1, #83B0C9); /* FF3.6 */
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #B5DCF1),color-stop(1, #83B0C9)); /* Saf4+, Chrome */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#B5DCF1', EndColorStr='#83B0C9'); /* IE6,IE7 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#B5DCF1', EndColorStr='#83B0C9')"; /* IE8 */
+
+	color: #313131;
+	text-shadow: 0px 1px 0px #CAE9F9;
+
+	-moz-box-shadow: 0px 1px 0px #fff;
+	-webkit-box-shadow: 0px 1px 0px #fff;
+	box-shadow: 0px 1px 0px #fff;
+}
+
+h1 span {
+	font-family: sans-serif;
+	font-size: 1.1em;
+	text-align: center;
+	font-color: white;
+	font-weight: lighter;
+	display: block;
+}
+
+html, body {
+	height:100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em; /* the bottom margin is the negative value of the footer's height */
+}
+
+.footer, .push {
+	height: 4em;
+	background-color: #C4C3C4;
+	font-size: 70%;
+	clear: both;
+}
+
+.jqplot-axis {
+	color: #3a5bac;
+}
+
+fieldset {
+	padding: 0;
+}
+
+#sliderLabel {
+	font-size: .9em;
+	color: #6263db;
+}
+
+#sliderValue {
+	font-size: 1.25em;
+	color: #0405ae;
+}
+
+#colLeft {
+	width: 30%;
+	float: left;
+	background: white;
+}
+
+#colRight {
+	width: 70%;
+	float: left;
+}
+
+#plotWindow {
+	padding: 10px;
+
+}
+
+.slider {
+	float: left;
+	/* width: 49%;*/
+	width: 160px;
+}
+
